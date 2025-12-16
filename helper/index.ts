@@ -79,3 +79,32 @@ export const getBlogPostRes = async (entryUrl: string): Promise<BlogPosts> => {
   liveEdit && addEditableTags(response[0], "blog_post", true);
   return response[0];
 };
+
+
+
+export const getComposableHeroSingleRes = async (entryUrl: string) => {
+  const response = (await getEntryByUrl({
+    contentTypeUid: "character",
+    entryUrl,
+    referenceFieldPath: ["contact_info.home_world"],
+    
+    jsonRtePath: ["description"],
+  })) as BlogPosts[];
+
+  liveEdit && addEditableTags(response[0], "character", true);
+  return response[0];
+};
+
+
+export const getAllComposableHeros = async (entryUrl: string) => {
+  const response = (await getEntryByUrl({
+    contentTypeUid: "creature_gallery_page",
+    entryUrl,
+    referenceFieldPath: ["characters"],
+    jsonRtePath: ["characters.description"],
+  })) as any; // bad but dont know what to put here instaed of any
+
+  liveEdit && addEditableTags(response, "creature_gallery_page", true);
+  return response[0];
+};
+

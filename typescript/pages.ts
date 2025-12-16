@@ -73,6 +73,8 @@ export type Page ={
   url: string;
   seo: Seo;
   title: string;
+  heading: string;
+  description: string;
 }
 
 export type Context = {
@@ -103,6 +105,23 @@ export type BlogPosts = {
   is_archived: boolean;
   seo: Seo;
   uid:string;
+  url: string;
+  _owner: string;
+  $: AdditionalParam;
+}
+
+
+export type SuperHeroPosts = {
+  [x: string]: any;
+  title: string;
+  date: string;
+  body: string;
+  author: [Author];
+  related_post: [Blog];
+  locale: string;
+  featured_image: Image;
+  is_archived: boolean;
+  seo: Seo;
   url: string;
   _owner: string;
   $: AdditionalParam;
