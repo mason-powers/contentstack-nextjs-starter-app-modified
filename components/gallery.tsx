@@ -133,7 +133,7 @@ const GalleryReact = ({
                                 {...(image.$?.url as {})}
                               />
                               <div className="featured-content">
-                                {/* <h3 data-cslp="blog_post.blt7ca504fb3c955cc0.en-us.title" className="">The  modern Cloud Ecosystem</h3> */}
+                                {/* <h3 data-cslp="blog_post.blt7ca504fb3c955cc0.en-us.title" className="">The modern Cloud Ecosystem</h3> */}
                                 <div>
                                   <h5
                                     className="card-title mb-2"
@@ -145,7 +145,8 @@ const GalleryReact = ({
                                     className="pb-3"
                                     {...(elem.$?.powers as {})}
                                   >
-                                    Power{elem?.powers.length > 1 ? "s" : ""}: {elem?.powers.join(", ")}
+                                    Power{elem?.powers.length > 1 ? "s" : ""}:{" "}
+                                    {elem?.powers.join(", ")}
                                   </div>
 
                                   {showDescription && (

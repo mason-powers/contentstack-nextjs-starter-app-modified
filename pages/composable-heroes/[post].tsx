@@ -52,9 +52,9 @@ export default function SuperHerosPost({
             <div className="row">
               <div className="col-12">
                 {postData?.title ? (
-                  <h2 className="mb-3" {...(postData.$?.title as {})}>
+                  <h1 className="mb-3" {...(postData.$?.title as {})}>
                     {postData?.title}
-                  </h2>
+                  </h1>
                 ) : (
                   ""
                 )}
